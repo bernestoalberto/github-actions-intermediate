@@ -13,7 +13,6 @@ jobs:
   test:
     needs: lint
     runs-on: ubuntu-latest
-    if: ${{github.repository == 'github-actions-crash-course/tree/main/second-project'}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -24,7 +23,6 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    if:  ${{github.repository == 'github-actions-crash-course/second-project'}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
